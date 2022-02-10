@@ -1,0 +1,4 @@
+#step001_blurandsave.c
+g++
+cmake
+libopencv-dev

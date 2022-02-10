@@ -1,0 +1,4 @@
+#step001_blurandsave.py
+python3
+python3-pil
+python3-numpy
