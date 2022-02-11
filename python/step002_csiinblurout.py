@@ -39,8 +39,8 @@ while True:
     with p1_vpiimg1.rlock():
         out_img1 = p1_vpiimg1.cpu()
 
-    overlayText0.OverlayText(out_img0, out_img0.width, out_img0.height, "csi:0, Gray, Box5x5, wx0.5&hx0.5, Box5x5", 2, 2, overlayText0.White, overlayText0.Gray60)
-    overlayText1.OverlayText(out_img1, out_img1.width, out_img1.height, "csi:1, Gray, Box5x5, wx0.5&hx0.5, Box5x5", 2, 2, overlayText1.White, overlayText1.Gray60)
+    overlayText0.OverlayText(out_img0, p1_vpiimg0.width, p1_vpiimg0.height, "csi:0, Gray, Box5x5, wx0.5&hx0.5, Box5x5", 2, 2, overlayText0.White, overlayText0.Gray60)
+    overlayText1.OverlayText(out_img1, p1_vpiimg1.width, p1_vpiimg1.height, "csi:1, Gray, Box5x5, wx0.5&hx0.5, Box5x5", 2, 2, overlayText1.White, overlayText1.Gray60)
 
     disp_img.paste(out_img0, (0,0))
     disp_img.paste(out_img1, (out_img0.width, 0))
