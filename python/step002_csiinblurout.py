@@ -14,6 +14,7 @@ overlayText0 = jetson.utils.cudaFont()
 overlayText1 = jetson.utils.cudaFont()
 output = jetson.utils.videoOutput("display://0")
 
+
 captureLength = 30*60
 frameNo = 0
 
@@ -42,7 +43,7 @@ while True:
         out_img1 = p1_vpiimg1.cpu()
 
     disp_img.paste(out_img0, (0,0))
-    disp_img.paste(out_img1, (out_img0.width, 0))
+    disp_img.paste(out_img1, (p1_vpiimg0.width, 0))
 
     output.Render(disp_img)
 
