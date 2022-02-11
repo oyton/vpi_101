@@ -22,8 +22,8 @@ while True:
     img1 = input1.Capture()
     frameNo += 1
 
-    vpi_img0 = vpi.asimage(np.asarray(img0)).convert(vpi.Format.U8)
-    vpi_img1 = vpi.asimage(np.asarray(img1)).convert(vpi.Format.U8)
+    vpi_img0 = vpi.asimage(np.asarray(img0))
+    vpi_img1 = vpi.asimage(np.asarray(img1))
 
     with vpi.Backend.CUDA:
         p1_vpiimg0 = vpi_img0.convert(vpi.Format.U8) \
@@ -46,7 +46,7 @@ while True:
     disp_img.paste(out_img1, (out_img0.width, 0))
 
     output.Render(disp_img)
-    
+
     if not input0.IsStreaming() or not input1.IsStreaming() \
         or output.IsStreaming() or frameNo>captureLength:
         input0.Close()
