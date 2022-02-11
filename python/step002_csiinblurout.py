@@ -28,11 +28,11 @@ while True:
     with vpi.Backend.CUDA:
         p1_vpiimg0 = vpi_img0.convert(vpi.Format.U8) \
                                 .box_filter(5, border=vpi.Border.ZERO) \
-                                .rescale((vpi_img0.width*1/2, vpi_img0.height*1/2), interp=vpi.Interp.LINEAR, border=vpi.Border.ZERO) \
+                                .rescale((vpi_img0.width*0.5, vpi_img0.height*0.5), interp=vpi.Interp.LINEAR, border=vpi.Border.ZERO) \
                                 .box_filter(5, border=vpi.Border.ZERO)
         p1_vpiimg1 = vpi_img1.convert(vpi.Format.U8) \
                                 .box_filter(5, border=vpi.Border.ZERO) \
-                                .rescale((vpi_img1.width*1/2, vpi_img1.height*1/2), interp=vpi.Interp.LINEAR, border=vpi.Border.ZERO) \
+                                .rescale((vpi_img1.width*0.5, vpi_img1.height*0.5), interp=vpi.Interp.LINEAR, border=vpi.Border.ZERO) \
                                 .box_filter(5, border=vpi.Border.ZERO)
     with p1_vpiimg0.rlock():
         out_img0 = p1_vpiimg0.cpu()
