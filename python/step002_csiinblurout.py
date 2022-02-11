@@ -35,10 +35,10 @@ while True:
                                 .rescale((int(vpi_img1.width*0.5), int(vpi_img1.height*0.5)), interp=vpi.Interp.LINEAR, border=vpi.Border.ZERO) \
                                 .box_filter(5, border=vpi.Border.ZERO)
     with p1_vpiimg0.rlock():
-        overlayText0.OverlayText(p1_vpiimg0, p1_vpiimg0.width, p1_vpiimg0.height, "csi:0, Gray, Box5x5, wx0.5&hx0.5, Box5x5", 2, 2, overlayText0.White, overlayText0.Gray60)
+        #overlayText0.OverlayText(p1_vpiimg0, p1_vpiimg0.width, p1_vpiimg0.height, "csi:0, Gray, Box5x5, wx0.5&hx0.5, Box5x5", 2, 2, overlayText0.White, overlayText0.Gray60)
         out_img0 = p1_vpiimg0.cpu()
     with p1_vpiimg1.rlock():
-        overlayText1.OverlayText(p1_vpiimg1, p1_vpiimg1.width, p1_vpiimg1.height, "csi:1, Gray, Box5x5, wx0.5&hx0.5, Box5x5", 2, 2, overlayText1.White, overlayText1.Gray60)
+        #overlayText1.OverlayText(p1_vpiimg1, p1_vpiimg1.width, p1_vpiimg1.height, "csi:1, Gray, Box5x5, wx0.5&hx0.5, Box5x5", 2, 2, overlayText1.White, overlayText1.Gray60)
         out_img1 = p1_vpiimg1.cpu()
 
     disp_img.paste(out_img0, (0,0))
